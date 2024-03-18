@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sandbox-app
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: pre-sync/pre-sync-a
+    repoURL: https://github.com/raisreis/playground-argocd.git
